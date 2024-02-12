@@ -99,25 +99,25 @@ and start coding.
 #### 2. Get feedback
 While writing, when want to check if anything may go wrong or see any compilation error:
 ```bat
-`./mvnw compile`
+./mvnw compile
 ```
 The terminal will give a fast feedback.
 
 #### 3. Running test
 When done with a feature: 
 ```bat
-`./mvnw clean test`
+./mvnw clean test
 ```
 Success message: <br> `[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0`
 
 #### 4. Before pushing
 Done with the feature and the tests, before committing & pushing, run: <br>
 ```bat
-./mvnw clean package`
+./mvnw clean package
 ```
 or
 ```bat
-./mvnw clean verify`
+./mvnw clean verify
 ```
 to get the `.jar` file. <br> Then run it as if it's the released ver:
 ```bat
@@ -166,25 +166,38 @@ To stop, `Ctrl`+`C` (+`y`).
 - and any other types of APIs (GraphQL, Web sockets API...)
 > Benefit: We can easy change APIs using this layer, without touching the Service layer.
 
-### Modularity
-
-@todo Jump to [33:15](https://youtu.be/Nv2DERaMx-4?t=1995).
-
+### Modularity (Dependencies)
+Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [three layers](#layers).
 
 
+## 4. Dependency Injection
+
+### Beans
+`Beans` are the concrete classes in the Spring Framework / Spring Boot.
+
+Use `@Component` or `@Service` annotation to declare a Bean.
+
+### Component scanning
+Component scanning happens when the app **starts up**. 
+
+In this process, Spring Boot will:
+1. Look for Beans, and where the Beans are needed.
+2. Do these Beans need any dependencies?
+3. Create an instance of the class, and place it (as a Bean) into the application context.
+
+In Spring-specific term, this process is also called "**Auto-wiring**".
+
+> Spring's component search will search for Beans **ONLY UNDER THE PACKAGE WHERE THE `@SpringBootApplication` IS IN**.
 
 
+### The `@SpringBootApplication` annotation
+1. `@Configuration`
+2. `@ComponentScan`
+3. `@EnableAutoConfiguration`
 
 
+### The `@EnableAutoConfiguration` annotation
 
-
-
-
-
-
-
-
-
-
+[See tut 1:01:21](https://youtu.be/Nv2DERaMx-4?t=3681)
 
 
