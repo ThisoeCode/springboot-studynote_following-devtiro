@@ -11,13 +11,17 @@ import lombok.extern.java.Log;
 @Log
 public class ColorApplication implements CommandLineRunner {
 
+	private ColorPrinter cp;
+	public ColorApplication(ColorPrinter colorPrinter) {
+		this.cp = colorPrinter;
+	}
+
 	public static void main(String[] args) {
 		SpringApplication.run(ColorApplication.class, args);
 	}
 
 	@Override
 	public void run(final String... args) {
-		final ColorPrinter colourPrinter = new ColorPrinterImpl();
-		log.info(colourPrinter.print());
+		log.info(cp.print());
 	}
 }
