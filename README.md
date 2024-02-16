@@ -2,7 +2,11 @@
 
 Most of the content is me following [Devtiro](https://www.devtiro.com/)'s [Spring Boot Tutorial](https://youtu.be/Nv2DERaMx-4) on YouTube.
 
+[Devtiro's Repo of this course](https://github.com/devtiro/course-spring-boot)
+
 Codes are written on Windows IntelliJ.
+
+> Start learning on 2024/02/11.
 
 
 # Learning Note
@@ -198,6 +202,8 @@ In Spring-specific term, this process is also called "**Auto-wiring**".
 
 ### The `@EnableAutoConfiguration` annotation
 
-[See tut 1:01:21](https://youtu.be/Nv2DERaMx-4?t=3681)
+# Todo
+- `ColoursApplication`: Practice coding the exact same thing as Devtiro.
+- [See tut 1:01:21](https://youtu.be/Nv2DERaMx-4?t=3681).
 
 
