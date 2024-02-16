@@ -181,7 +181,7 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 
 - Inside `@Configuration` class, use `@Bean` annotation to declare a Bean.
 
-> Steps did in `colorprint` branch:
+> #### **Steps did in `colorprint` branch:**
 > 1. Add a `config/` package under root folder (`com.thisoe.xxx/`).
 > 2. Create a class, label the class using `@Configuration`.
 > 3. Define Beans in the class with `@Bean` annotation.
@@ -189,7 +189,18 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 
 - Use `@Component` or `@Service` annotation to declare a Bean.
 
+> #### **Steps did in `component-bean` branch:**
+> ```java
+> @Component // or @Server
+> public class ColorPrinterImpl implements ColorPrinter {
+> }
+> ```
 >
+> 1. Add `@Component` annotation to the class.<brThis is telling Spring that `ColorPrinter` is a Bean and is an implementation of `ColorPrinterImpl`.
+>
+> 2. If we run the app at this moment, we get an error `Consider defining a bean of type 'RedPrinter' in your configuration.`<brSo we should add `@Component` in front of `EnglishRedPrinter` class, Etc.
+>
+> 3. Switch lang of each color by annotating `@Component` to the wanted classes.
 
 ### Component scanning
 Component scanning happens when the app **starts up**. 
@@ -213,7 +224,7 @@ In Spring-specific term, this process is also called "**Auto-wiring**".
 ### The `@EnableAutoConfiguration` annotation
 
 # Todo
-- `ColoursApplication`: Practice coding the exact same thing as Devtiro.
+- [Follow tut 54:18](https://youtu.be/Nv2DERaMx-4?t=3258) and update **[Component scanning](#component-scanning)**;
 - [See tut 1:01:21](https://youtu.be/Nv2DERaMx-4?t=3681).
 
 
