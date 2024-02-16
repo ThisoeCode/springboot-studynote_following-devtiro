@@ -27,5 +27,7 @@ public class ColorPrinterImpl implements ColorPrinter {
 
 3. Switch lang of each color by annotating `@Component` to the wanted classes.
 
-> The out put of this branch:<br>
+> The output of this branch:<br>
 > `aka, blue, green`
+
+The `@Service` annotation does the same thing as `@Component`, but it's *“perhaps just a little bit more descriptive as to what this class actually does”*.
