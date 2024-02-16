@@ -13,9 +13,19 @@ Codes are written on Windows IntelliJ.
 
 ## Dependency Injection
 
-### Beans
-`Beans` are the concrete classes in the Spring Framework / Spring Boot. Use `@Component` or `@Service` annotation to declare a Bean.
+### Beans (with `@Component`)
 
-> 1. Add a `config/` package under root folder (`com.thisoe.xxx/`).\
-> 2. Create a class, label the class using `@Configuration`.
-> 3. Define Beans in the class with `@Bean` annotation.
+```java
+@Component
+public class ColorPrinterImpl implements ColorPrinter {
+}
+```
+
+1. Add `@Component` annotation to the class.<brThis is telling Spring that `ColorPrinter` is a Bean and is an implementation of `ColorPrinterImpl`.
+
+2. If we run the app at this moment, we get an error `Consider defining a bean of type 'RedPrinter' in your configuration.`<brSo we should add `@Component` in front of `EnglishRedPrinter` class, Etc.
+
+3. Switch lang of each color by annotating `@Component` to the wanted classes.
+
+> The out put of this branch:<br>
+> `aka, blue, green`
