@@ -179,11 +179,17 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 ### Beans
 `Beans` are the concrete classes in the Spring Framework / Spring Boot.
 
-Use `@Component` or `@Service` annotation to declare a Bean.
+- Inside `@Configuration` class, use `@Bean` annotation to declare a Bean.
 
-> 1. Add a `config/` package under root folder (`com.thisoe.xxx/`).\
+> Steps did in `colorprint` branch:
+> 1. Add a `config/` package under root folder (`com.thisoe.xxx/`).
 > 2. Create a class, label the class using `@Configuration`.
 > 3. Define Beans in the class with `@Bean` annotation.
+
+
+- Use `@Component` or `@Service` annotation to declare a Bean.
+
+>
 
 ### Component scanning
 Component scanning happens when the app **starts up**. 
