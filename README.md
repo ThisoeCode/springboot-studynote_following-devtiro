@@ -2,7 +2,11 @@
 
 Most of the content is me following [Devtiro](https://www.devtiro.com/)'s [Spring Boot Tutorial](https://youtu.be/Nv2DERaMx-4) on YouTube.
 
+[Devtiro's Repo of this course](https://github.com/devtiro/course-spring-boot)
+
 Codes are written on Windows IntelliJ.
+
+> Start learning on 2024/02/11.
 
 
 # Learning Note
