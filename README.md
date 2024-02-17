@@ -18,7 +18,7 @@ Codes are written on Windows IntelliJ.
 ## Spring Boot
 
 ### Config file: environment variables
-On Unix-based app:
+On Mac & Linux:
 ```bash
 SERVER_PORT=23333 ./mvnw spring-boot:run
 ```
