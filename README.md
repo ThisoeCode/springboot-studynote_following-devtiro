@@ -181,7 +181,7 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 
 - Inside `@Configuration` class, use `@Bean` annotation to declare a Bean.
 
-> #### **Steps did in [`colorprint`](https://github.com/ThisoeCode/springboot-studynote_following-devtiro/tree/colorprint) branch:**
+> > #### _Steps did in [`colorprint`](https://github.com/ThisoeCode/springboot-studynote_following-devtiro/tree/colorprint) branch_
 > 1. Add a `config/` package under root folder (`com.thisoe.xxx/`).
 > 2. Create a class, label the class using `@Configuration`.
 > 3. Define Beans in the class with `@Bean` annotation.
@@ -189,16 +189,16 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 
 - Use `@Component` or `@Service` annotation to declare a Bean.
 
-> #### **Steps did in [`component-bean`](https://github.com/ThisoeCode/springboot-studynote_following-devtiro/tree/component-bean) branch:**
+> > #### _Steps did in [`component-bean`](https://github.com/ThisoeCode/springboot-studynote_following-devtiro/tree/component-bean) branch:_
 > ```java
 > @Component // or @Server
 > public class ColorPrinterImpl implements ColorPrinter {
 > }
 > ```
 >
-> 1. Add `@Component` annotation to the class.<brThis is telling Spring that `ColorPrinter` is a Bean and is an implementation of `ColorPrinterImpl`.
+> 1. Add `@Component` annotation to the class.<br>This is telling Spring that `ColorPrinter` is a Bean and is an implementation of `ColorPrinterImpl`.
 >
-> 2. If we run the app at this moment, we get an error `Consider defining a bean of type 'RedPrinter' in your configuration.`<brSo we should add `@Component` in front of `EnglishRedPrinter` class, Etc.
+> 2. If we run the app at this moment, we get an error `Consider defining a bean of type 'RedPrinter' in your configuration.`<br>So we should add `@Component` in front of `EnglishRedPrinter` class, Etc.
 >
 > 3. Switch lang of each color by annotating `@Component` to the wanted classes.
 
@@ -253,16 +253,23 @@ SERVER_PORT=8383
 
 (In IntelliJ, add env keys at the top bar > `Run / Debug Configurations` > `Edit Configurations...` > `Environment variables`)
 
-> When using command line (`./mvnw`) to start the app, simply put env vars in front:
-> ```bat
-> SERVER_PORT=8383 ./mvnw spring-boot:run
+> > #### _Tried on branch `helloworld`_
+> When using command line (`./mvnw`) to start the app, put env vars in front:
+> 
+> - On Mac / Linux:
+> ```bash
+> SERVER_PORT=23333 ./mvnw spring-boot:run
+> ```
+> - On Windows:
+> ```bash
+> $env:SERVER_PORT=23333 ; ./mvnw spring-boot:runspring-boot:run
 > ```
 
+Before packaging jar, put env vars by using `export` command. **_(This only works on Mac / Linux!)_**
 
 
-
+### Configuration Properties
 
 # Todo
-
-- See tut 1:14:20.
+- See tut [1:16:02](https://youtu.be/Nv2DERaMx-4?t=4562).
 
