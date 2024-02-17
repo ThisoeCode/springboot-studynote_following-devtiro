@@ -181,7 +181,7 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 
 - Inside `@Configuration` class, use `@Bean` annotation to declare a Bean.
 
-> #### **Steps did in `colorprint` branch:**
+> #### **Steps did in [`colorprint`](https://github.com/ThisoeCode/springboot-studynote_following-devtiro/tree/colorprint) branch:**
 > 1. Add a `config/` package under root folder (`com.thisoe.xxx/`).
 > 2. Create a class, label the class using `@Configuration`.
 > 3. Define Beans in the class with `@Bean` annotation.
@@ -189,7 +189,7 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 
 - Use `@Component` or `@Service` annotation to declare a Bean.
 
-> #### **Steps did in `component-bean` branch:**
+> #### **Steps did in [`component-bean`](https://github.com/ThisoeCode/springboot-studynote_following-devtiro/tree/component-bean) branch:**
 > ```java
 > @Component // or @Server
 > public class ColorPrinterImpl implements ColorPrinter {
@@ -203,7 +203,7 @@ Use Spring's ecosystem of dependencies, or, pre-can solutions, to build the [thr
 > 3. Switch lang of each color by annotating `@Component` to the wanted classes.
 
 ### Component scanning
-Component scanning happens when the app **starts up**. 
+Component scanning happens when the app starts up.
 
 In this process, Spring Boot will:
 1. Look for Beans, and where the Beans are needed.
@@ -212,7 +212,8 @@ In this process, Spring Boot will:
 
 In Spring-specific term, this process is also called "**Auto-wiring**".
 
-> Spring's component search will search for Beans **ONLY UNDER THE PACKAGE WHERE THE `@SpringBootApplication` IS IN**.
+> The `@ComponentScan` (in `@SpringBootApplication`) is the one who starts the component scanning process.
+> <br>It will look for all Beans like `@Service` in the annotated package and below.
 
 
 ### The `@SpringBootApplication` annotation
@@ -220,11 +221,48 @@ In Spring-specific term, this process is also called "**Auto-wiring**".
 2. `@ComponentScan`
 3. `@EnableAutoConfiguration`
 
+> Watch [from 54:18 to 01:05:55](https://youtu.be/Nv2DERaMx-4?t=3258) for how Spring Web dependency work on the Beans scanning.
 
-### The `@EnableAutoConfiguration` annotation
+
+## 5. Config file `application.properties`
+### Common Application Properties
+Official docs: [Common Application Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+
+Looking into the docs, search `server.port`. This is where we can set the port where the app server runs on.
+
+In `application.properties`:
+```properties
+server.port=8181
+```
+In `application.yml`:
+```yaml
+server:
+  port: 8282
+```
+
+### Config file in `test/`
+Spring will pick the `appplication.x` config file under `test/` instead of the one in `main/` when running test. <br>
+This is convenient to connect to the real database or simulate production environment.
+
+
+### `.env` (Environment Variables)
+To use Application Properties in `.env`, change all the dots or hyphens into underscores, and capitalize all letters.
+```properties
+SERVER_PORT=8383
+```
+
+(In IntelliJ, add env keys at the top bar > `Run / Debug Configurations` > `Edit Configurations...` > `Environment variables`)
+
+> When using command line (`./mvnw`) to start the app, simply put env vars in front:
+> ```bat
+> SERVER_PORT=8383 ./mvnw spring-boot:run
+> ```
+
+
+
+
 
 # Todo
-- [Follow tut 54:18](https://youtu.be/Nv2DERaMx-4?t=3258) and update **[Component scanning](#component-scanning)**;
-- [See tut 1:01:21](https://youtu.be/Nv2DERaMx-4?t=3681).
 
+- See tut 1:14:20.
 
